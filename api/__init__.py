@@ -11,6 +11,7 @@ from api.models.cat import Cat
 
 # ============ Import Views ============
 from api.views.auth import auth
+from api.views.cats import cats
 
 list = ['GET', 'HEAD', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE', 'LINK']
 cors = CORS()
@@ -26,7 +27,7 @@ def create_app(config):
 
   # ============ Register Blueprints ============
   app.register_blueprint(auth, url_prefix='/api/auth') 
-  # app.register_blueprint(cats, url_prefix='/api/cats') 
+  app.register_blueprint(cats, url_prefix='/api/cats') 
   # app.register_blueprint(toys, url_prefix='/api/toys') 
 
   return app
